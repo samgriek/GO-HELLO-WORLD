@@ -10,14 +10,11 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-
 	whatToSay := doctor.Intro()
-
 	fmt.Println(whatToSay)
 
 	for {
 		userInput, _ := reader.ReadString('\n')
-
 		userInput = strings.Replace(userInput, "\r\n", "", -1)
 		userInput = strings.Replace(userInput, "\n", "", -1)
 
@@ -26,6 +23,5 @@ func main() {
 		} else {
 			fmt.Println(doctor.Response(userInput))
 		}
-
 	}
 }
